@@ -94,7 +94,13 @@ class _PreviewImageScreenState extends State<PreviewImageScreen> {
                     ),
                     backgroundColor: Colors.black26,
                     onPressed: () {
-                      _uploadImage();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => inforamtion(),
+                        ),
+                      );
+//                      _uploadImage();
                     }),
               )
             ],

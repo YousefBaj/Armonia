@@ -38,8 +38,8 @@ class _inforamtionState extends State<inforamtion> {
       body: Stack(
         children: <Widget>[
           Container(
-            color: Colors.teal,
-            height: 600,
+            color: Colors.cyan,
+            height: MediaQuery.of(context).size.height,
             child: Column(
               children: <Widget>[
                 Row(
@@ -52,6 +52,7 @@ class _inforamtionState extends State<inforamtion> {
                         padding: const EdgeInsets.only(top: 28, left: 16),
                         child: FloatingActionButton(
                             heroTag: "cancel",
+                            foregroundColor: Colors.white,
                             child: Icon(
                               Icons.cancel,
                               size: 25,
@@ -68,236 +69,278 @@ class _inforamtionState extends State<inforamtion> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 70),
+            margin: EdgeInsets.only(top: 84),
             decoration: new BoxDecoration(
                 color: Colors.white,
                 borderRadius: new BorderRadius.only(
-                    topLeft: const Radius.circular(40.0),
-                    topRight: const Radius.circular(40.0))),
-            child: Stack(
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.all(8),
-                      decoration: new BoxDecoration(
-                        color: Colors.black12,
-                        borderRadius: new BorderRadius.only(
-                          topLeft: const Radius.circular(40.0),
-                          topRight: const Radius.circular(40.0),
-                          bottomLeft: const Radius.circular(40.0),
-                          bottomRight: const Radius.circular(40.0),
+                    topLeft: const Radius.circular(32.0),
+                    topRight: const Radius.circular(32.0))),
+            height: MediaQuery.of(context).size.height,
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    child: Text(
+                      'معلومات',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey),
+                      textAlign: TextAlign.end,
+                    ),
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.only(right: 24, top: 16),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Container(
+                        decoration: new BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: new BorderRadius.only(
+                            topLeft: const Radius.circular(32.0),
+                            topRight: const Radius.circular(32.0),
+                            bottomRight: const Radius.circular(32.0),
+                            bottomLeft: const Radius.circular(32.0),
+                          ),
                         ),
+                        margin: EdgeInsets.only(left: 32, top: 32),
+                        height: 100,
+                        width: 200,
+                        child: Center(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "طماطم",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.grey.shade500),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              "Tomato",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.grey.shade500),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        )),
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 8, bottom: 8),
+                      Padding(
+                        padding: EdgeInsets.only(top: 33),
                         child: Column(
                           children: <Widget>[
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                Padding(
-                                  padding: EdgeInsets.only(top: 16),
-                                  child: Container(
-                                    width: 150,
-                                    height: 50,
-                                    margin: EdgeInsets.all(8),
-                                    child: Center(
-                                        child: Text(
-                                      "طماطم",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    )),
-                                  ),
-                                ),
-                                Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: <Widget>[
-                                    Text("النبتة"),
-                                    Container(
-                                        child: Image(
-                                      image: ExactAssetImage(
-                                          'assets/images/tomato.png'),
-                                      width: 60,
-                                      height: 60,
-                                    )),
-                                  ],
-                                ),
-                              ],
+                            Text(
+                              "النبتة",
+                              style: TextStyle(
+                                  color: Colors.grey.shade700, fontSize: 16),
+                            ),
+                            Image(
+                              image: AssetImage('assets/images/tomato.png'),
+                              width: 70,
+                              height: 70,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Container(
+                        decoration: new BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: new BorderRadius.only(
+                            topLeft: const Radius.circular(32.0),
+                            topRight: const Radius.circular(32.0),
+                            bottomRight: const Radius.circular(32.0),
+                            bottomLeft: const Radius.circular(32.0),
+                          ),
+                        ),
+                        margin: EdgeInsets.only(left: 32, top: 32),
+                        height: 100,
+                        width: 200,
+                        child: Center(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "فايرروس تبرقش (الموزيك) الطماطم",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.grey.shade500),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              "Tomato mosaic virus",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.grey.shade500),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        )),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 33),
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              "المرض",
+                              style: TextStyle(
+                                  color: Colors.grey.shade700, fontSize: 16),
                             ),
                             SizedBox(
-                              height: 16,
+                              height: 5,
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: <Widget>[
-                                Padding(
-                                  padding: EdgeInsets.only(top: 16),
-                                  child: Container(
-                                    child: Center(
-                                        child: Text(
-                                      "Tomato mosaic virus",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    )),
-                                  ),
-                                ),
-                                Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: <Widget>[
-                                    Text("المرض"),
-                                    Container(
-                                      child: Image(
-                                        image: ExactAssetImage(
-                                            'assets/images/hazard.png'),
-                                        width: 60,
-                                        height: 60,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
+                            Image(
+                              image: AssetImage('assets/images/hazard.png'),
+                              width: 50,
+                              height: 50,
                             ),
                           ],
                         ),
                       ),
-                    ),
-                    Container(
-                      decoration: new BoxDecoration(
-                        color: Colors.black12,
-                        borderRadius: new BorderRadius.only(
-                          topLeft: const Radius.circular(40.0),
-                          topRight: const Radius.circular(40.0),
-                          bottomLeft:
-                          const Radius.circular(40.0),
-                          bottomRight:
-                          const Radius.circular(40.0),
+                      SizedBox(),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Container(
+                        decoration: new BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: new BorderRadius.only(
+                            topLeft: const Radius.circular(32.0),
+                            topRight: const Radius.circular(32.0),
+                            bottomRight: const Radius.circular(32.0),
+                            bottomLeft: const Radius.circular(32.0),
+                          ),
                         ),
-                      ),
-                      margin: EdgeInsets.all(8),
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 8, bottom: 8),
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: <Widget>[
-                                Padding(
-                                  padding: EdgeInsets.only(top: 16),
-                                  child: Container(
-                                      width: 150,
-                                      height: 80,
+                        margin: EdgeInsets.only(left: 32, top: 32),
 
-                                      margin: EdgeInsets.all(8),
-                                      child: Center(
-                                        child: Text(
-                                          " زراعة أصناف مقاومة  عدم التدخين أثناء شتل النباتات حرق بقايا المحصول المريض  بدلاً من تركها في الحقل وتسبب العدوى",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      )),
-                                ),
-                                Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: <Widget>[
-                                    Text("العلاج"),
-                                    Container(
-                                        width: 150,
-                                        height: 60,
-                                        child: Image(
-                                          image: ExactAssetImage(
-                                              'assets/images/MEDI.png'),
-                                          width: 60,
-                                          height: 60,
-                                        )),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
+                        width: 200,
+                        child: Padding(
+                          padding: EdgeInsets.all(12),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    child: Text(
+                                      "زراعة أصناف مقاومة",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.grey.shade500),
+                                      textAlign: TextAlign.end,
+                                    ),
+                                  ),
+                                  Icon(Icons.arrow_left,size: 20,color: Colors.grey.shade500,),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Expanded(
+                                    child: Text(
+                                      "عدم التدخين أثناء شتل النباتات",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.grey.shade500),
+                                      textAlign: TextAlign.end,
+                                    ),
+                                  ),
+                                  Icon(Icons.arrow_left,size: 20,color: Colors.grey.shade500,),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Expanded(
+                                    child: Text(
+                                      " حرق بقايا المحصول المريض بدلاً من تركها في الحقل وتسبب العدوى",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.grey.shade500),
+                                      textAlign: TextAlign.end,
+                                    ),
+                                  ),
+                                  Icon(Icons.arrow_left,size: 20,color: Colors.grey.shade500,),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(8),
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 8, bottom: 8),
+                      Padding(
+                        padding: EdgeInsets.only(top: 33),
                         child: Column(
                           children: <Widget>[
-                            Row(
-                              children: <Widget>[ Column(children: <Widget>[
-                                Container(
-                                    width: 150,
-                                    height: 80,
-                                    decoration: new BoxDecoration(
-                                      color: Colors.black12,
-                                      borderRadius: new BorderRadius.only(
-                                        topLeft: const Radius.circular(40.0),
-                                        topRight: const Radius.circular(40.0),
-                                        bottomLeft:
-                                        const Radius.circular(40.0),
-                                        bottomRight:
-                                        const Radius.circular(40.0),
-                                      ),
-                                    ),
-                                    margin: EdgeInsets.all(8),
-                                    child: Center(
-                                      child: Text(
-                                        " زراعة أصناف مقاومة  عدم التدخين أثناء شتل النباتات حرق بقايا المحصول المريض  بدلاً من تركها في الحقل وتسبب العدوى",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    )),
-                              ],),
-                              Text("المنتج"),
-                              Text("الاسم"),
-                              Text("المورد"),
-                            ],),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: <Widget>[
-                                Padding(
-                                  padding: EdgeInsets.only(top: 16),
-                                  child: Container(
-                                      width: 150,
-                                      height: 80,
-                                      margin: EdgeInsets.all(8),
-                                      child: Center(
-                                        child: Text(
-                                          " زراعة أصناف مقاومة  عدم التدخين أثناء شتل النباتات حرق بقايا المحصول المريض  بدلاً من تركها في الحقل وتسبب العدوى",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      )),
-                                ),
-                                Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: <Widget>[
-                                    Text("الموردين"),
-                                    Container(
-                                        width: 150,
-                                        height: 60,
-                                        child: Image(
-                                          image: ExactAssetImage(
-                                              'assets/images/archive.png'),
-                                          width: 60,
-                                          height: 60,
-                                        )),
-                                  ],
-                                ),
-                              ],
+                            Text(
+                              "العلاج",
+                              style: TextStyle(
+                                  color: Colors.grey.shade700, fontSize: 16),
+                            ),
+                            Image(
+                              image: AssetImage('assets/images/MEDI.png'),
+                              width: 70,
+                              height: 70,
                             ),
                           ],
                         ),
                       ),
+                      SizedBox(),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Divider(
+                    color: Colors.grey.shade600,
+                    thickness: 0.25,
+                  ),
+                  Container(
+                    child: Text(
+                      'الموردين',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey),
+                      textAlign: TextAlign.end,
                     ),
-                  ],
-                ),
-              ],
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.only(right: 24),
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Container(
+
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],
